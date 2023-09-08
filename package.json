@@ -1,0 +1,32 @@
+{
+  "name": "the-tech-blog",
+  "version": "1.0.0",
+  "description": "AS A developer who writes about tech\r I WANT a CMS-style blog site\r SO THAT I can publish articles, blog posts, and my thoughts and opinions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tristenh/the-tech-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tristenh/the-tech-blog/issues"
+  },
+  "homepage": "https://github.com/Tristenh/the-tech-blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.6.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.32.1"
+  }
+}
