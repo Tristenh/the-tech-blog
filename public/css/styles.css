@@ -1,9 +1,30 @@
-:root{
-    --primary-color: #d9ead3;
-    --secondary-color: #231010;
+:root {
+  --primary-color: #d9ead3;
+  --secondary-color: #231010;
 }
+/* body */
 body {
   background-color: var(--primary-color);
+}
+/* typography */
+a {
+  text-decoration: none;
+}
+
+/* header */
+header {
+  background-color: var(--secondary-color);
+}
+
+/* nav */
+.nav-control {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+}
+nav a {
+  color: var(--primary-color);
 }
 .title a {
   background-color: var(--primary-color);
@@ -13,22 +34,10 @@ body {
   font-weight: bold;
   padding: 0.5rem;
 }
-.nav-btn {
-  padding-bottom: 2rem;
-  display: flex;
-  justify-content: space-between;
-  width: 20rem;
-}
-a {
-  text-decoration: none;
-}
-header {
-  background-color: var(--secondary-color);
-}
-header a {
-  color: var(--primary-color);
-}
-.homepage-post {
+
+/* posts and login */
+.homepage-post,
+.login-control {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
@@ -36,14 +45,39 @@ header a {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.login-control {
+  color: var(--primary-color);
+}
 .homepage-post-container p {
   color: var(--secondary-color);
   padding-left: 1rem;
 }
-.homepage-post-container {
+.homepage-post-container,
+.login-container {
   border: 4px solid var(--secondary-color);
   margin-top: 1rem;
 }
-.homepage-post:hover{
-color:var(--primary-color) ;
+.homepage-post:hover {
+  color: var(--primary-color);
+}
+
+/* form */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  padding: 1rem;
+}
+form input {
+  width: 100%;
+}
+form button {
+  margin-top: 1rem;
+  color: #E3E1F1;
+  background-color: #666666;
+}
+/* signup */
+.no-show-signup{
+    display: none;
 }
