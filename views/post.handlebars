@@ -1,0 +1,46 @@
+<div class="text-center post">
+  <h2 class="postTitle">{{title}}</h2>
+  <p>{{description}}</p>
+  <p>Created by
+    {{user.name}}
+    on
+    {{format_date date_created}}
+  </p>
+  <hr />
+
+  <!--add comment to post area-->
+  <form class="form-inline new-comment">
+    <div class="form-group">
+      <input type="hidden" id="post-id" value="{{id}}" />
+      <label for="comment-add"></label>
+      <textarea
+        class="form-control"
+        type="text"
+        id="comment-add"
+        name="comment-add"
+        placeholder="Add your comment"
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Comment</button>
+    <p>{{comments.length}} comments</p>
+  </form>
+
+  {{#if comments.length}}
+    <div class="col-md-12 comments-list">
+
+      {{#each comments as |comment|}}
+        <div class="row comment">
+          <div>
+            <p>{{comment.commentdesc}}</p>
+            <p>{{comment.user.name}}</p>
+
+          </div>
+        </div>
+
+      {{/each}}
+    </div>
+  {{/if}}
+
+</div>
+
+<script src="/js/comment.js"></script>
