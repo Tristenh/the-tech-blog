@@ -1,19 +1,5 @@
 <!-- Loop over each object in the projects array -->
 
 {{#each posts as |post|}}
-  <div class="homepage-post-container">
-    <a href="post/{{post.id}}">
-      <div class="homepage-post">
-        <h2>
-          {{post.title}}
-        </h2>
-        <h2>
-          {{format_date post.date_created}}
-        </h2>
-      </div>
-      <p>
-        {{post.description}}
-      </p>
-    </a>
-  </div>
+{{> posts}}
 {{/each}}
