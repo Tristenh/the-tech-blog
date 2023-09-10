@@ -32,15 +32,10 @@
   {{#if comments.length}}
     {{#each comments as |comment|}}
     <div class="post-container">
-
-    <div class="homepage-post-container">
-      {{!-- <div class="homepage-post"> --}}
         <div class="black-bar"></div>
       <p>{{comment.commentdesc}}</p>
       <p>-{{comment.user.name}}
         {{format_date date_created}}</p>
-      {{!-- </div> --}}
-      </div>
     </div>
     {{/each}}
   {{/if}}
