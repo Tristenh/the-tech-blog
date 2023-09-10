@@ -15,14 +15,19 @@
     <button type="submit" class="btn btn-primary">Add Comment</button>
     <p>{{comments.length}} comments</p>
   </form>
+
   {{#if comments.length}}
     {{#each comments as |comment|}}
-      <p>{{comment.user.name}}
-        {{format_date date_created}}</p>
+    <div class="homepage-post-container">
+      {{!-- <div class="homepage-post"> --}}
+        <div class="black-bar"></div>
       <p>{{comment.commentdesc}}</p>
+      <p>-{{comment.user.name}}
+        {{format_date date_created}}</p>
+      {{!-- </div> --}}
+      </div>
     {{/each}}
   {{/if}}
-
 </div>
 
 <script src="/js/comment.js"></script>

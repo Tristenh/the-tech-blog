@@ -5,6 +5,7 @@
 /* body */
 body {
   background-color: var(--primary-color);
+  height: 100%;
 }
 /* typography */
 a {
@@ -80,4 +81,17 @@ form button {
 /* signup */
 .no-show-signup{
     display: none;
+}
+.black-bar{
+    background-color: var(--secondary-color);
+    height: 2rem;
+    margin-bottom: 2rem;
+}
+/* footer */
+footer {
+   width: 100%;
+   padding: 2rem;
+   bottom: 0;
+  display: flex;
+  justify-content: center;
 }
