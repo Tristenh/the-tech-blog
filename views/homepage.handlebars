@@ -1,21 +1,21 @@
 <!-- Loop over each object in the projects array -->
 {{#each posts as |post|}}
-<div class="post-container">
-  <a href="post/{{id}}">
-    <div class="homepage-post">
-      <h2>
-        {{title}}
-      </h2>
-      <h2>
-        Posted by
-        {{user.name}}
-        on
-        {{format_date date_created}}
-      </h2>
-    </div>
-    <p>
-      {{description}}
-    </p>
-  </a>
-</div>
+  <div class="post-container">
+    <a href="post/{{id}}">
+      <div class="homepage-post">
+        <h2>
+          {{title}}
+        </h2>
+        <h2>
+          Posted by
+          {{user.name}}
+          on
+          {{format_date date_created}}
+        </h2>
+      </div>
+      <p>
+        {{description}}
+      </p>
+    </a>
+  </div>
 {{/each}}

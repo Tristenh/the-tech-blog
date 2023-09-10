@@ -27,7 +27,7 @@ router.get("/profile", withAuth, async (req, res) => {
     });
     const user = userData.get({ plain: true });
     res.render("profile", {
-      layout: 'layouts',
+      layout: "layouts",
       posts,
       ...user,
       logged_in: true,
@@ -87,7 +87,13 @@ router.get("/post/:id", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["id", "commentdesc", "post_id", "user_id", "date_created"],
+          attributes: [
+            "id",
+            "commentdesc",
+            "post_id",
+            "user_id",
+            "date_created",
+          ],
           include: [
             {
               model: User,
@@ -118,7 +124,13 @@ router.get("/update/:id", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ["id", "commentdesc", "post_id", "user_id", "date_created"],
+          attributes: [
+            "id",
+            "commentdesc",
+            "post_id",
+            "user_id",
+            "date_created",
+          ],
           include: [
             {
               model: User,

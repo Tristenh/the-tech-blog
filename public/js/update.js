@@ -6,7 +6,7 @@ updateForm.addEventListener("submit", async (event) => {
   // Get the project ID from the button's data-id attribute
   const updateButton = event.target.querySelector(".update-btn");
   const id = updateButton.getAttribute("data-id");
-  
+
   // Move these lines inside the conditional block
   const title = document.querySelector("#project-name").value.trim();
   const description = document.querySelector("#project-desc").value.trim();

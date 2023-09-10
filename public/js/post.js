@@ -38,7 +38,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-
 const updateButtonHandler = async (event) => {
   event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
@@ -52,8 +51,12 @@ document
   .querySelector(".new-project-form")
   .addEventListener("submit", addProject);
 
-  const deleteButtons = document.querySelectorAll(".btn-danger");
-  deleteButtons.forEach((button) => button.addEventListener("click", delButtonHandler));
-  
-  const updateButtons = document.querySelectorAll(".btn-light");
-  updateButtons.forEach((button) => button.addEventListener("click", updateButtonHandler));
+const deleteButtons = document.querySelectorAll(".btn-danger");
+deleteButtons.forEach((button) =>
+  button.addEventListener("click", delButtonHandler)
+);
+
+const updateButtons = document.querySelectorAll(".btn-light");
+updateButtons.forEach((button) =>
+  button.addEventListener("click", updateButtonHandler)
+);

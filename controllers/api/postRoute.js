@@ -46,7 +46,10 @@ router.put("/:id", withAuth, async (req, res) => {
     });
 
     if (postData[0] === 0) {
-      res.status(404).json({ message: "No post found with this id or you don't have permission to update it!" });
+      res.status(404).json({
+        message:
+          "No post found with this id or you don't have permission to update it!",
+      });
       return;
     }
 
