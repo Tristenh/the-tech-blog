@@ -21,6 +21,7 @@ const addProject = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
     const confirmed = confirm("are you sure you ewant to delete this post?");
@@ -40,5 +41,6 @@ document
   .querySelector(".new-project-form")
   .addEventListener("submit", addProject);
 document
-  .querySelector(".posts-list")
+  .querySelectorAll(".btn-danger")
+  .forEach((button) => button.addEventListener("click", delButtonHandler))
   .addEventListener("click", delButtonHandler);
