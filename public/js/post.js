@@ -46,17 +46,6 @@ const updateButtonHandler = async (event) => {
       const id = event.target.getAttribute("data-id");
       document.location.href = `/update/${id}`;
     }
-  //   const confirmed = confirm("are you sure you ewant to delete this post?");
-  //   if (confirmed) {
-  //     const response = await fetch(`/api/posts/${id}`, {
-  //       method: "DELETE",
-  //     });
-  //     if (response.ok) {
-  //       document.location.replace("/profile");
-  //     } else {
-  //       alert("Failed to delete project");
-  //     }
-  //   }
   }
 };
 document
