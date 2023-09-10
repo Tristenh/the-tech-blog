@@ -32,31 +32,37 @@
   </form>
 </div>
 <!-- Loop over each object in the projects array -->
-  {{#if posts.length}}
-<h3 class="postTitle">You have created {{posts.length}} posts:</h3>
-<div class="posts-list">
-{{#each posts as |post|}}
-<div class="post-container">
-  <a href="post/{{id}}">
-    <div class="homepage-post">
-      <h2>
-        {{title}}
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">X</button>
-<button>update</button>
-      </h2>
-      <h2>
-        Posted by
-        {{name}}
-        on
-        {{format_date date_created}}
-      </h2>
-    </div>
-    <p>
-      {{description}}
-    </p>
-  </a>
-</div>
-{{/each}}
-</div>
+{{#if posts.length}}
+  <h3 class="postTitle">You have created {{posts.length}} posts:</h3>
+  <div class="posts-list">
+    {{#each posts as |post|}}
+      <div class="post-container">
+        <a href="post/{{id}}">
+          <div class="homepage-post">
+            <h2>
+              {{title}}
+              <button
+                class="btn btn-sm btn-danger"
+                data-id="{{post.id}}"
+              >X</button>
+              <button
+                class="btn btn-sm btn-light"
+                data-id="{{id}}"
+              >update</button>
+            </h2>
+            <h2>
+              Posted by
+              {{name}}
+              on
+              {{format_date date_created}}
+            </h2>
+          </div>
+          <p>
+            {{description}}
+          </p>
+        </a>
+      </div>
+    {{/each}}
+  </div>
 {{/if}}
 <script src="./js/post.js"></script>

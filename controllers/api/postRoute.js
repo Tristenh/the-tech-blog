@@ -35,4 +35,30 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
+// Update a post by its `id` value
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.update(req.body, {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (postData[0] === 0) {
+      res.status(404).json({ message: "No post found with this id or you don't have permission to update it!" });
+      return;
+    }
+
+    const updatedPost = await Post.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    res.status(200).json(updatedPost);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

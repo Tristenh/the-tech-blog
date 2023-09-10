@@ -37,10 +37,34 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+
+
+const updateButtonHandler = async (event) => {
+  event.preventDefault();
+  if (event.target.hasAttribute("data-id")) {
+    if (event.target.classList.contains("btn-light")) {
+      const id = event.target.getAttribute("data-id");
+      document.location.href = `/update/${id}`;
+    }
+  //   const confirmed = confirm("are you sure you ewant to delete this post?");
+  //   if (confirmed) {
+  //     const response = await fetch(`/api/posts/${id}`, {
+  //       method: "DELETE",
+  //     });
+  //     if (response.ok) {
+  //       document.location.replace("/profile");
+  //     } else {
+  //       alert("Failed to delete project");
+  //     }
+  //   }
+  }
+};
 document
   .querySelector(".new-project-form")
   .addEventListener("submit", addProject);
-document
-  .querySelectorAll(".btn-danger")
-  .forEach((button) => button.addEventListener("click", delButtonHandler))
-  .addEventListener("click", delButtonHandler);
+
+  const deleteButtons = document.querySelectorAll(".btn-danger");
+  deleteButtons.forEach((button) => button.addEventListener("click", delButtonHandler));
+  
+  const updateButtons = document.querySelectorAll(".btn-light");
+  updateButtons.forEach((button) => button.addEventListener("click", updateButtonHandler));

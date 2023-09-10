@@ -107,4 +107,35 @@ router.get("/post/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+// update Posts by id
+router.get("/update/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Comment,
+          attributes: ["id", "commentdesc", "post_id", "user_id", "date_created"],
+          include: [
+            {
+              model: User,
+              attributes: ["name"],
+            },
+          ],
+        },
+      ],
+    });
+    const post = postData.get({ plain: true });
+    console.log(post);
+    res.render("update", {
+      ...post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
