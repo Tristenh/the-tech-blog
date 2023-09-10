@@ -1,17 +1,4 @@
-  <div class="post-container">
-      <div class="post">
-        <h2>
-          {{title}}
-        </h2>
-         <h2>
-          Posted by {{user.name}} on
-          {{format_date date_created}}
-        </h2>
-      </div>
-      <p>
-        {{description}}
-      </p>
-  </div>
+{{> posts}}
   <!--add comment to post area-->
   <form class="form-inline new-comment">
     <div class="form-group">
