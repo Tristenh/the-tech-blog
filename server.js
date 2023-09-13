@@ -18,7 +18,12 @@ app.use(express.static(path.join(__dirname, "public")));
 global.__basedir = __dirname;
 const sess = {
   secret: "Super secret secret",
-  cookie: {},
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: "strict",
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

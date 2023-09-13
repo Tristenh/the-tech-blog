@@ -27,21 +27,21 @@ const loginFormHandler = async (event) => {
     }
   }
 };
-
+// sign up
 const signupFormHandler = async (event) => {
   event.preventDefault();
-
+  // get input values
   const name = document.querySelector("#name-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
-
+  // POST to api endpoint
   if (name && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    // if ok redirect to profile
     if (response.ok) {
       document.location.replace("/profile");
     } else {

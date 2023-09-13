@@ -12,7 +12,7 @@ const addComment = async (event) => {
       body: JSON.stringify({ commentdesc, post_id }),
       headers: { "Content-Type": "application/json" },
     });
-
+    // if ok reload page
     if (response.ok) {
       // If successful, reload page
       console.log("added a comment");

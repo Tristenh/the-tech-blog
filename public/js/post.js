@@ -19,12 +19,13 @@ const addProject = async (event) => {
     }
   }
 };
-
+// delete post
 const delButtonHandler = async (event) => {
   event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
-    const confirmed = confirm("are you sure you ewant to delete this post?");
+    const confirmed = confirm("are you sure you want to delete this post?");
+    // send a DELETE request to api endpoint
     if (confirmed) {
       const response = await fetch(`/api/posts/${id}`, {
         method: "DELETE",
@@ -37,7 +38,7 @@ const delButtonHandler = async (event) => {
     }
   }
 };
-
+// redirect to update/ taget id route
 const updateButtonHandler = async (event) => {
   event.preventDefault();
   if (event.target.hasAttribute("data-id")) {
@@ -47,6 +48,8 @@ const updateButtonHandler = async (event) => {
     }
   }
 };
+// query selectors
+// event listeners
 document
   .querySelector(".new-project-form")
   .addEventListener("submit", addProject);
